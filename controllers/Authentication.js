@@ -26,6 +26,7 @@ exports.signIn = async (req, res) =>{
 
         }
     } catch (error) {
+        console.log(error.message)
         return res.status(500).json("Server side Error");
     }
     
