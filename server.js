@@ -32,4 +32,4 @@ app.use('/api/financial_info', financialInfoRoutes);
 app.use('/api/profile', profileRoutes);
 
 
-app.listen(3001, ()=> console.log("Listneing on port 3001"));
+app.listen(process.env.PORT || 3001, ()=> console.log("Listneing on port 3001"));
