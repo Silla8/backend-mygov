@@ -4,7 +4,8 @@ const pool = new Pool({
     password: "cSuuFm22zTit1PxQLj5DD8C4H1lY3nWG",
     host: "dpg-crb3efjtq21c73cf8adg-a.frankfurt-postgres.render.com",
     port: 5432,
-    database: "mygov"
+    database: "mygov", 
+    ssl: true
 });
 
 module.exports= pool;
