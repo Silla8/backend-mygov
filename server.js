@@ -11,8 +11,10 @@ const familyInfoRoutes = require('./routes/FamilyInfo');
 const personalInterestRoutes = require('./routes/PersonalInterest');
 const profileRoutes = require('./routes/Profile');
 const pictureRoutes = require('./routes/Picture');
+const dotenv = require('dotenv');
 
 
+dotenv.config();
 
 const app = express();
 
