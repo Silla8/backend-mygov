@@ -7,6 +7,7 @@ exports.signIn = async (req, res) =>{
     try {
         const { pin , password }= req.body;
         const result = await pool.query("select * from users where pin = $1", [pin]);
+        console.log(pin);
         
         if(result.rows.length===0){
             return res.status(401).json("Invalid Credentials");
