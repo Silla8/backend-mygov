@@ -6,7 +6,7 @@ exports.signIn = async (req, res) =>{
     
     try {
         const { pin , password }= req.body;
-        console.log(pin);
+       
         const result = await pool.query("select * from users where pin = $1", [pin]);
         
         if(result.rows.length===0){
@@ -26,7 +26,7 @@ exports.signIn = async (req, res) =>{
 
         }
     } catch (error) {
-        console.log(error.message)
+        
         return res.status(500).json("Server side Error");
     }
     
