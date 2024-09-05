@@ -3,7 +3,7 @@ const pool = require('../database');
 const Validator = async (req, res, next) =>{
     
     try {
-            if(req.route.path==="/signin" || req.route.path==="/signup"){
+            if(req.route.path==="/signin"){
 
                 const { pin, password }= req.body;
                  
@@ -12,6 +12,14 @@ const Validator = async (req, res, next) =>{
                 }
 
                
+            }
+            else if(req.route.path==="/signup"){
+
+                const { pin, password, email }= req.body;
+                 
+                if(pin.length===0 || password.length===0  || pin.length<7 || password.length<7 || email.length===0 || email.split('@').length!==2 ){
+                    return res.status(400).json("Invalid Credentials");
+                }
             }
             else{
 

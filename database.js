@@ -1,10 +1,16 @@
 const Pool= require("pg").Pool;
+const dotenv = require('dotenv');
+
+
+dotenv.config();
+
+
 const pool = new Pool({
-    user: "mygov_user",
-    password: "cSuuFm22zTit1PxQLj5DD8C4H1lY3nWG",
-    host: "dpg-crb3efjtq21c73cf8adg-a.frankfurt-postgres.render.com",
-    port: 5432,
-    database: "mygov", 
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME, 
     ssl: true
 });
 
